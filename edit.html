@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit data guru</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Form Ubah Data Guru</h1>
+
+  <form id="formUbah">
+
+    
+    <label>NIP</label>
+    <input type="text" id="NIP" required>
+
+    <label>Nama </label>
+    <input type="text" id="NAMA" required>
+
+    <label>JENISKELAMIN</label>
+    <input type="text" id="JENISKELAMIN" required>
+    
+    <label>TGLLAHIR</label>
+    <input type="text" id="TGLLAHIR" required>
+
+    <label>MAPEL </label>
+    <input type="text" id="MAPEL" required>
+
+    <label>ALAMAT</label>
+    <input type="text" id="ALAMAT" required>
+
+   <label>NOTLP</label>
+    <input type="text" id="NOTLP" required>
+
+    <label>EMAIL </label>
+    <input type="text" id="EMAIL" required>
+
+    <label>PENDIDIKAN_TERAKHIR</label>
+    <input type="text" id="PENDIDIKAN_TERAKHIR" required>
+
+
+    <button type="submit">Simpan</button>
+    <br><br>
+    <a href="daftar.html">Daftar data guru</a>
+
+  </form>
+</div>
+
+<script type="module">
+import { ambildataguru, ubahdataguru} from './main.js';
+
+// ambil id dari URL
+const params = new URLSearchParams(window.location.search);
+const iddataguru = params.get('id');
+
+// ambil data dari firestore
+const dataguru = await ambildataguru(iddataguru);
+
+// isi form
+document.getElementById('NIP').value = dataguru.NIP;
+document.getElementById('NAMA').value = dataguru.NAMA;
+document.getElementById('JENISKELAMIN').value = dataguru.JENISKELAMIN
+document.getElementById('TGLLAHIR').value = dataguru.TGLLAHIR
+ document.getElementById('MAPEL').value = dataguru.MAPEL
+ document.getElementById('ALAMAT').value = dataguru.ALAMAT
+ document.getElementById('NOTLP').value = dataguru.NOTLP
+ document.getElementById('EMAIL').value = dataguru.EMAIL
+ document.getElementById('PENDIDIKAN_TERAKHIR').value = dataguru.PENDIDIKAN_TERAKHIR
+// submit update
+const form = document.getElementById('formUbah');
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  ubahdataguru(iddataguru);
+});
+</script>
+
+</body>
+</html>

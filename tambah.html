@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tambah Musik</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Form Tambah Data guru</h1>
+
+  <form id="formTambah">
+
+    <label>NIP</label>
+    <input type="text" id="NIP" required>
+
+    <label>NAMA </label>
+    <input type="text" id="NAMA" required>
+
+    <label>JENISKELAMIN</label>
+    <input type="text" id="JENISKELAMIN" required>
+    
+    <label>TGLLAHIR</label>
+    <input type="text" id="TGLLAHIR" required>
+
+    <label>MAPEL </label>
+    <input type="text" id="MAPEL" required>
+
+    <label>ALAMAT</label>
+    <input type="text" id="ALAMAT" required>
+
+   <label>NOTLP</label>
+    <input type="text" id="NOTLP" required>
+
+    <label>EMAIL </label>
+    <input type="text" id="EMAIL" required>
+
+    <label>PENDIDIKAN_TERAKHIR</label>
+    <input type="text" id="PENDIDIKAN_TERAKHIR" required>
+
+    
+    <button type="submit">Simpan</button>
+
+  </form>
+
+  <a href="daftar.html">Daftar DATA GURU</a>
+</div>
+
+<script type="module">
+  import { tambahdataguru} from './main.js';
+
+  const formTambah = document.getElementById('formTambah');
+
+  formTambah.addEventListener('submit', function(e) {
+    e.preventDefault();
+    tambahdataguru();
+  });
+</script>
+
+</body>
+</html>

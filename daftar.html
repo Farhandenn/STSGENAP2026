@@ -1,0 +1,41 @@
+  <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>daftar dataguru</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+      <h1>daftar dataguru</h1>
+      <a href="tambah.html" class="button">Tambah dataguru</a>
+      <a href="index.html">Awal Halaman</a>
+      <table>
+        <thead>
+          <tr>
+            <th>NIP</th>
+            <th>NAMA</th>
+            <th>JENISKELAMIN</th>
+            <th>TGLLAHIR</th>
+            <th>MAPEL</th>
+            <th>ALAMAT</th>
+            <th>NOTLP</th>
+            <th>EMAIL</th>
+            <th>PENDIDIKAN_TERAKHIR</th>
+            <th>aksi</th>
+          </tr>
+        </thead>
+        <tbody id="tabelData"></tbody>
+      </table>
+    </div>
+    <script type="module">
+      import { daftardataguru} from './main.js'
+
+      // eksekusi fungsi menampilkan daftar data guru
+      daftardataguru()
+    </script>
+</body>
+</html>
